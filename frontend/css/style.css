@@ -1,0 +1,255 @@
+/* Bharat Quest - Traditional Games of India Style Sheet */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Cultural Indian Heritage Palette */
+  --bg-cream: #FDFBF7;
+  --bg-cream-card: #FFFFFF;
+  --bg-cream-alt: #F7F3EB;
+  --navy-900: #0F172A;
+  --navy-800: #1E293B;
+  --navy-700: #334155;
+  --navy-600: #475569;
+  
+  /* Saffron & Warm Cultural Accents */
+  --saffron-600: #C2410C;
+  --saffron-500: #EA580C;
+  --saffron-400: #F97316;
+  --saffron-100: #FFEDD5;
+  --saffron-50: #FFF7ED;
+
+  /* Indoor Gaming Royal Purple */
+  --indoor-800: #4C1D95;
+  --indoor-700: #5B21B6;
+  --indoor-600: #7C3AED;
+  --indoor-500: #8B5CF6;
+  --indoor-100: #EDE9FE;
+  --indoor-50: #F5F3FF;
+
+  /* Outdoor Nature Emerald */
+  --outdoor-800: #064E3B;
+  --outdoor-700: #047857;
+  --outdoor-600: #059669;
+  --outdoor-500: #10B981;
+  --outdoor-100: #D1FAE5;
+  --outdoor-50: #ECFDF5;
+
+  /* Gold Economy & Stars */
+  --gold-600: #B45309;
+  --gold-500: #D97706;
+  --gold-400: #F59E0B;
+  --gold-100: #FEF3C7;
+  --gold-50: #FFFBEB;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--navy-900);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Subtle Indian Mandana/Rangoli Geometric Texture */
+.bg-mandala-pattern {
+  background-image: radial-gradient(#E2D9C8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Royal Card Styling */
+.heritage-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 217, 200, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heritage-card:hover {
+  box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Category Cards */
+.card-indoor {
+  border-top: 5px solid var(--indoor-600);
+}
+.card-indoor:hover {
+  border-color: var(--indoor-500);
+}
+
+.card-outdoor {
+  border-top: 5px solid var(--outdoor-600);
+}
+.card-outdoor:hover {
+  border-color: var(--outdoor-500);
+}
+
+/* SVG India Map Styling */
+.state-path {
+  fill: #E9ECEF;
+  stroke: #FFFFFF;
+  stroke-width: 1.2;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.state-path:hover {
+  fill: var(--saffron-400);
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  filter: drop-shadow(0 4px 8px rgba(234, 88, 12, 0.35));
+}
+
+.state-path.active-state {
+  fill: var(--saffron-600);
+  stroke: #FFFFFF;
+  stroke-width: 2.5;
+}
+
+.state-path.has-games {
+  fill: #DCE5E7;
+}
+
+.state-path.has-games:hover {
+  fill: var(--saffron-500);
+}
+
+/* Cowrie Shell Animated Tokens */
+.cowrie-shell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FFFDF9 0%, #F5EDE0 100%);
+  border: 2px solid #D5C2A5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), inset 0 1px 2px #FFFFFF;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.cowrie-shell.mouth-up::after {
+  content: '';
+  width: 26px;
+  height: 5px;
+  background: #78350F;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.cowrie-shell.mouth-down::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #E6D5BD 0%, #C4AE91 100%);
+  border-radius: 50%;
+}
+
+.cowrie-rolling {
+  animation: cowrieRoll 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cowrieRoll {
+  0% { transform: translateY(-20px) rotate(0deg) scale(0.85); }
+  50% { transform: translateY(-35px) rotate(180deg) scale(1.15); }
+  100% { transform: translateY(0) rotate(360deg) scale(1); }
+}
+
+/* Chaupar Authentic Board Canvas Styling */
+.chaupar-board-container {
+  aspect-ratio: 1 / 1;
+  max-width: 580px;
+  margin: 0 auto;
+  background: #B91C1C;
+  border-radius: 16px;
+  border: 8px solid #7F1D1D;
+  box-shadow: 0 16px 40px -8px rgba(127, 29, 29, 0.3), inset 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Saripat Board */
+.saripat-board-container {
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
+  background: #4C1D95;
+  border-radius: 16px;
+  border: 8px solid #2E1065;
+  box-shadow: 0 16px 40px -8px rgba(76, 29, 149, 0.3);
+  position: relative;
+}
+
+/* Satkoli Board */
+.satkoli-board-container {
+  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
+  background: #0F172A;
+  border-radius: 16px;
+  border: 8px solid #1E293B;
+  box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.3);
+  position: relative;
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  background-color: rgba(15, 23, 42, 0.65);
+}
+
+/* Floating AI Chatbot Bubble */
+.chatbot-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  box-shadow: 0 12px 32px -4px rgba(234, 88, 12, 0.4);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1ECE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Micro-animations */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(234, 88, 12, 0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.bounce-slow {
+  animation: bounceSlow 3s ease-in-out infinite;
+}

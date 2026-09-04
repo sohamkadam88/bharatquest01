@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traditional Games of India — Bharat Quest</title>
+  
+  <!-- Tailwind CSS CDN for high-velocity responsive utility layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            saffron: {
+              50: '#FFF7ED',
+              100: '#FFEDD5',
+              400: '#F97316',
+              500: '#EA580C',
+              600: '#C2410C',
+            },
+            indoor: {
+              50: '#F5F3FF',
+              100: '#EDE9FE',
+              600: '#7C3AED',
+              700: '#5B21B6',
+              800: '#4C1D95',
+            },
+            outdoor: {
+              50: '#ECFDF5',
+              100: '#D1FAE5',
+              600: '#059669',
+              700: '#047857',
+              800: '#064E3B',
+            }
+          },
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (Body) and Cinzel (Cultural Display Headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Custom Bharat Quest Styling -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="bg-[#FDFBF7] text-[#0F172A] antialiased flex flex-col min-h-screen selection:bg-orange-100 selection:text-orange-900">
+  
+  <!-- Persistent Responsive Navbar -->
+  <div id="navbar-root"></div>
+
+  <!-- Dynamic SPA Content Outlet -->
+  <main id="main-content-area" class="flex-1" role="main"></main>
+
+  <!-- Cultural Footer -->
+  <footer class="bg-stone-900 text-stone-300 pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Brand & Mission -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-400 flex items-center justify-center text-white text-xl shadow-md">
+              🏛️
+            </div>
+            <div>
+              <div class="font-display font-bold text-xl text-white">Bharat Quest</div>
+              <div class="text-xs text-orange-400 font-semibold uppercase tracking-wider font-sans">Traditional Games of India</div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-400 max-w-md leading-relaxed">
+            An interactive cultural-exploration and gamified platform connecting generations with India's indigenous games, martial arts, and strategic board traditions.
+          </p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-3">Explore</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#/" class="hover:text-orange-400 transition">Landing Page</a></li>
+            <li><a href="#/map" class="hover:text-orange-400 transition">Interactive India Map</a></li>
+            <li><a href="#/state/maharashtra" class="hover:text-orange-400 transition">Maharashtra Experience</a></li>
+            <li><a href="#/category/maharashtra/indoor" class="hover:text-orange-400 transition">Indoor Games (Playable)</a></li>
+            <li><a href="#/category/maharashtra/outdoor" class="hover:text-orange-400 transition">Outdoor Traditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Economy & Progression Rules -->
+        <div>
+          <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-3">Real Economy</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#/leaderboard" class="hover:text-orange-400 transition">Real Leaderboard</a></li>
+            <li><a href="#/progress" class="hover:text-orange-400 transition">Player Progress</a></li>
+            <li class="pt-2 text-[11px] text-amber-300 font-medium">
+              ⭐ Points, Stars, and Coins are strictly earned from verified indoor matches.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-stone-800 text-center text-xs text-stone-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          © 2026 Bharat Quest • Traditional Games of India. Crafted with reverence for Indian heritage.
+        </div>
+        <div class="text-[11px] text-stone-400">
+          Pure Database-Backed Progression • Zero Simulated Rankings
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Cultural AI Chatbot Outlet -->
+  <div id="chatbot-root"></div>
+
+  <!-- Global Modal Mount Points -->
+  <div id="auth-modal-root" class="hidden"></div>
+  <div id="reward-modal-root" class="hidden"></div>
+  <div id="unlock-modal-root" class="hidden"></div>
+
+  <!-- SPA Module Entry Point -->
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
